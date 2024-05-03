@@ -1,12 +1,16 @@
-import { Toolbar, Typography, Box, AppBar } from '@mui/material';
+import { Toolbar, Typography, Box, AppBar, styled } from '@mui/material';
 export default function ToolbarComponent() {
+    const CenteredTypography = styled(Typography)({
+        flexGrow: 1,
+        textAlign: 'center'
+    });
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                 <Toolbar>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                    <CenteredTypography variant="h6" component="div">
                         Altius Hub
-                    </Typography>
+                    </CenteredTypography>
                 </Toolbar>
             </AppBar>
         </Box>

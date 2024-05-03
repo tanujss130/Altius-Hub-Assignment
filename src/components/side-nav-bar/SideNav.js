@@ -1,10 +1,10 @@
 import React from "react";
 import { Drawer, List, ListItem, ListItemText } from '@mui/material';
+import { useNavigate } from "react-router-dom";
 export default function SideNav() {
-
+    const navigate = useNavigate();
     const handleClick = (path) => {
-        console.log("http://localhost:3000" + path, "clicked");
-        // navigate("http://localhost:3000"+path);
+        navigate(path);
     }
 
     return (
@@ -14,7 +14,7 @@ export default function SideNav() {
                 variant="permanent"
             >
                 <List>
-                    <ListItem onClick={handleClick("/listView")}>
+                    <ListItem onClick={() => handleClick("/listView")}>
                         <ListItemText primary="Invoices" />
                     </ListItem>
                 </List>
